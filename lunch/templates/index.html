@@ -1,0 +1,29 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}Lunch Time{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center">
+  <div class="container">
+    <h1 class="display-4">☕️ Lunch Time 🍕</h1>
+    <p class="lead">Want to have a lunch and looking for a restaurant?</p>
+    <p class="lead">Want to leave a restaurant review?</p>
+    <hr class="my-4">
+    <p>You've found the right place! Checkout collection of restaurants and reviews.</p>
+    <p>
+      <a class="btn btn-warning btn-lg" href="{{ url_for('restaurants') }}" role="button">Show Me Restaurants!</a>
+      <a class="btn btn-warning btn-lg" href="{{ url_for('add_restaurant_web') }}" role="button">Add Restaurant!</a>
+    </p>
+    <p>
+      <a class="btn btn-warning btn-lg" href="{{ url_for('reviews') }}" role="button">Show Me Reviews!</a>
+      <a class="btn btn-warning btn-lg" href="{{ url_for('add_review_web') }}" role="button">Add Review!</a>
+    </p>
+  </div>
+</div>
+
+{% endblock %}
