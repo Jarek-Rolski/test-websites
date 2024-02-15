@@ -1,14 +1,14 @@
 import os
 import time
 
-if os.environ["LUNCH"]== "true":
+if os.environ["LUNCH"] != "false":
     print("Lunch start!")
-    bashCommand = 'python lunch/main.py --root_path="/lunch" &'
+    bashCommand = f'python lunch/main.py --root_path="{os.environ["LUNCH"]}" &'
     os.system(bashCommand)
 
-if os.environ["GRADIO"]== "true":
+if os.environ["GRADIO"] != "false":
     print("Gradio start!")
-    bashCommand = 'python gradio/app.py --root_path="/gradio" &'
+    bashCommand = f'python gradio/app.py --root_path="{os.environ["GRADIO"]}" &'
     os.system(bashCommand)
 
 time.sleep(60*60*10)
